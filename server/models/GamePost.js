@@ -30,6 +30,11 @@ const gamePostSchema = new Schema(
             minlength: 1,
             maxlength: 280
         },
+        platform: {
+            type: String,
+            minlength: 1,
+            maxlength: 20
+        },
         comments: [commentSchema]
     },
     {

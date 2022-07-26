@@ -20,6 +20,12 @@ const userSchema = new Schema(
       required: true,
       minlength: 5
     },
+    gameposts: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: 'GamePost'
+      }
+    ],
     friends: [
       {
         type: Schema.Types.ObjectId,
