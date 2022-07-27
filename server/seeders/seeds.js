@@ -1,37 +1,30 @@
-const faker = require('faker');
-
+// const faker = require('faker');
+const userSeeds = require('./userSeed.json');
+const gamepostSeeds = require('./gamepostSeed.json');
 const db = require('../config/connection');
-const { Thought, User } = require('../models');
+const { GamePost, User } = require('../models');
 
 db.once('open', async () => {
-  await User.deleteMany({});
+  try {
+    await GamePost.deleteMany({});
+    await User.deleteMany({});
 
-  // create user data
-  const userData = [];
+    await User.create(userSeeds);
 
-  for (let i = 0; i < 50; i += 1) {
-    const username = faker.internet.userName();
-    const email = faker.internet.email(username);
-    const password = faker.internet.password();
-
-    userData.push({ username, email, password });
-  }
-
-  const createdUsers = await User.collection.insertMany(userData);
-
-  // create friends
-  for (let i = 0; i < 100; i += 1) {
-    const randomUserIndex = Math.floor(Math.random() * createdUsers.ops.length);
-    const { _id: userId } = createdUsers.ops[randomUserIndex];
-
-    let friendId = userId;
-
-    while (friendId === userId) {
-      const randomUserIndex = Math.floor(Math.random() * createdUsers.ops.length);
-      friendId = createdUsers.ops[randomUserIndex];
+    for (let i = 0; i < gamepostSeeds.length; i++) {
+      const { _id, gamepostAuthor } = await GamePost.create(gamepostSeeds[i]);
+      const user = await User.findOneAndUpdate(
+        { username: gamepostAuthor },
+        {
+          $addToSet: {
+            gameposts: _id,
+          },
+        }
+      );
     }
-
-    await User.updateOne({ _id: userId }, { $addToSet: { friends: friendId } });
+  } catch (err) {
+    console.error(err);
+    process.exit(1);
   }
 
   console.log('all done!');
