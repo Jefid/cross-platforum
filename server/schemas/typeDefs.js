@@ -10,14 +10,14 @@ const typeDefs = gql `
         friends: [User]
     }
 
-    type Gamepost {
+    type GamePost {
         _id: ID
         gamePlayed: String
         createdAt: String
         username: String
         rating: Int
         review: String
-        commentCount: int
+        commentCount: Int
         comments: [Comment]
     }
 
@@ -28,25 +28,12 @@ const typeDefs = gql `
         username: String
     }
 
-    type Auth {
-        token: ID!
-        user: user
-    }
-
     type Query {
-        me: User
         users: [User]
         user(username: String!): User
         gameposts(username: String): [GamePost]
-        gamepost(_id: ID!); GamePost
-    }
-
-    type Mutation {
-        login(email: String!, password: String!): Auth
-        addUser(username: String!, email: String!, password: String!): Auth
-        addGamePost(gamePlayed: String!, rating: Int!, review: String): GamePost
-        addFriend(friendId: ID!): User
-    }
-`;
+        gamepost(_id: ID!): GamePost
+      }
+`
 
 module.exports = typeDefs;
