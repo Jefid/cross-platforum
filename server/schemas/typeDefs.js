@@ -2,7 +2,7 @@ const { gql } = require ('apollo-server-express');
 
 const typeDefs = gql `
     type User {
-        _id: ID
+        _id: ID!
         username: String
         email: String
         friendCount: Int
@@ -10,27 +10,27 @@ const typeDefs = gql `
         friends: [User]
     }
 
-    type Gamepost {
+    type GamePost {
         _id: ID
         gamePlayed: String
         createdAt: String
         username: String
         rating: Int
         review: String
-        commentCount: int
+        commentCount: Int
         comments: [Comment]
     }
 
-    type Comment {
-        _id: ID
-        commentBody: String
-        createdAt: String
-        username: String
-    }
+     type Comment {
+         _id: ID
+         commentBody: String
+         createdAt: String
+         username: String
+     }
 
     type Auth {
         token: ID!
-        user: user
+        user: User
     }
 
     type Query {
@@ -38,7 +38,7 @@ const typeDefs = gql `
         users: [User]
         user(username: String!): User
         gameposts(username: String): [GamePost]
-        gamepost(_id: ID!); GamePost
+        gamepost(_id: ID!): GamePost
     }
 
     type Mutation {

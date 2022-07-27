@@ -1,5 +1,5 @@
 const { Schema, model } = require('mongoose');
-// const reactionSchema = require('./Reaction');
+const commentSchema = require('./Comment');
 const dateFormat = require('../utils/dateFormat');
 
 const gamePostSchema = new Schema(
