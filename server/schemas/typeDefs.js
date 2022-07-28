@@ -28,25 +28,12 @@ const typeDefs = gql `
          username: String
      }
 
-    type Auth {
-        token: ID!
-        user: User
-    }
-
     type Query {
-        me: User
         users: [User]
         user(username: String!): User
         gameposts(username: String): [GamePost]
         gamepost(_id: ID!): GamePost
-    }
-
-    type Mutation {
-        login(email: String!, password: String!): Auth
-        addUser(username: String!, email: String!, password: String!): Auth
-        addGamePost(gamePlayed: String!, rating: Int!, review: String): GamePost
-        addFriend(friendId: ID!): User
-    }
-`;
+      }
+`
 
 module.exports = typeDefs;
