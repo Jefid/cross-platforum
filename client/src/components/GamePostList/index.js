@@ -12,8 +12,8 @@ const GamePostList = ({ gameposts, title }) => {
         gameposts.map(gamepost => (
           <div key={gamepost._id} className="card mb-3">
             <p className="card-header">
-              {gamepost.username}
-              completed at: {gamepost.createdAt}
+              {gamepost.username} <t/>
+                completed at: {gamepost.createdAt}
             </p>
             <div className="card-body">
               <p>{gamepost.gamePlayed}</p>
