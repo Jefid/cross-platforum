@@ -1,8 +1,9 @@
 const { gql } = require ('apollo-server-express');
 
+// GraphQL typeDefs for models
 const typeDefs = gql `
     type User {
-        _id: ID
+        _id: ID!
         username: String
         email: String
         friendCount: Int
