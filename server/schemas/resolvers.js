@@ -10,7 +10,7 @@ const resolvers = {
         .populate('gameposts')
         .populate('friends');
     },
-    
+
     user: async (parent, { username }) => {
       return User.findOne({ username })
         .select('-__v -password')
@@ -18,14 +18,18 @@ const resolvers = {
         .populate('gameposts');
     },
 
-    me: async (parent, args) => {
-      const userData = await User.findOne({})
-        .select('-__v -password')
-        .populate('thoughts')
-        .populate('friends');
-  
-      return userData;
-    },
+   me: async (parent, args, context) => {
+  if (context.user) {
+    const userData = await User.findOne({ _id: context.user._id })
+      .select('-__v -password')
+      .populate('thoughts')
+      .populate('friends');
+
+    return userData;
+  }
+
+  throw new AuthenticationError('Not logged in');
+},
 
     gameposts: async (parent, { username }) => {
       const params = username ? { username } : {};
@@ -59,6 +63,35 @@ const resolvers = {
     
       const token = signToken(user);
       return { token, user };
+    },
+    addGamePost: async (parent, args, context) => {
+      if (context.user) {
+        const thought = await GamePost.create({ ...args, username: context.user.username });
+    
+        await User.findByIdAndUpdate(
+          { _id: context.user._id },
+          { $push: { gamepost: gamepost._id } },
+          { new: true }
+        );
+    
+        return gamepost;
+      }
+    
+      throw new AuthenticationError('You need to be logged in!');
+    },
+
+    addComment: async (parent, { gamepostId, commentBody }, context) => {
+      if (context.user) {
+        const updatedGamePost = await GamePost.findOneAndUpdate(
+          { _id: gamepostId },
+          { $push: { comments: { reactionBody, username: context.user.username } } },
+          { new: true, runValidators: true }
+        );
+    
+        return updatedGamePost;
+      }
+    
+      throw new AuthenticationError('You need to be logged in!');
     }
   }
 
