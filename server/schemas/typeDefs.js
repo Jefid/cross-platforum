@@ -29,10 +29,24 @@ const typeDefs = gql `
     }
 
     type Query {
-        users: [User]
+        me: User
+        users:[User]
         user(username: String!): User
         gameposts(username: String): [GamePost]
         gamepost(_id: ID!): GamePost
+      }
+
+      type Mutation {
+        login(email: String!, password: String!): Auth
+        addUser(username: String!, email: String!, password: String!): Auth
+        addGamePost(gamePlayed: String!): GamePost
+        addComment(gamepostId: ID!, commentBody: String!): GamePost
+        addFriend(friendId: ID!): User
+      }
+
+      type Auth {
+        token: ID!
+        user: User
       }
 `
 
