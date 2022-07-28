@@ -35,6 +35,11 @@ const typeDefs = gql `
         gameposts(username: String): [GamePost]
         gamepost(_id: ID!): GamePost
       }
+    
+    type Auth {
+        token: ID!
+        user: User
+    }
 `
 
 module.exports = typeDefs;
