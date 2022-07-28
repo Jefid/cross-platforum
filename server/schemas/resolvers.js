@@ -1,23 +1,28 @@
 const { User, GamePost } = require('../models');
 
+// resolvers 
 const resolvers = {
   Query: {
+    // find multiple users
     users: async () => {
       return User.find()
         .select('-__v -password')
         .populate('gameposts')
         .populate('friends');
     },
+    // find user by username
     user: async (parent, { username }) => {
       return User.findOne({ username })
         .select('-__v -password')
         .populate('friends')
         .populate('gameposts');
     },
+    // find gameposts by user
     gameposts: async (parent, { username }) => {
       const params = username ? { username } : {};
       return GamePost.find(params).sort({ createdAt: -1 });
     },
+    // find gamepost by id
     gamepost: async (parent, { _id }) => {
       return GamePost.findOne({ _id });
     }
