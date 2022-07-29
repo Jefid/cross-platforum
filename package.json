@@ -22,5 +22,8 @@
   "homepage": "https://github.com/Jefid/cross-platforum#readme",
   "devDependencies": {
     "concurrently": "^7.3.0"
+  },
+  "dependencies": {
+    "jsonwebtoken": "^8.5.1"
   }
 }
