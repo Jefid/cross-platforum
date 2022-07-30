@@ -21,7 +21,6 @@ const gamePostSchema = new Schema(
         },
         rating: {
             type: Number,
-            required: "You played it, you rate it",
             min: 0,
             max: 5,
         },

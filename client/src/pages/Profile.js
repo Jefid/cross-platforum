@@ -7,7 +7,6 @@ import FriendList from '../components/FriendList';
 import { useQuery } from '@apollo/client';
 import { QUERY_USER, QUERY_ME } from '../utils/queries';
 import Auth from '../utils/auth';
-import auth from '../utils/auth';
 
 const Profile = (props) => {
   
@@ -19,9 +18,11 @@ const Profile = (props) => {
 
   const user = data?.me || data?.user || {};
 
+  console.log(user);
+
   // navigate to personal profile page if username is the logged-in user's
-  if (auth.loggedIn() && Auth.getProfile().data.username === userParam) {
-    return <Navigate to="/profile" />;
+  if (Auth.loggedIn() && Auth.getProfile().data.username === userParam) {
+    return <Navigate to="/profile:username" />;
   }
 
   if (loading) {
