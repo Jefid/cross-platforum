@@ -1,16 +1,16 @@
 {
-  "short_name": "Cross Platforum",
-  "name": "GameOn! Cross Platforum",
+  "short_name": "React App",
+  "name": "Create React App Sample",
   "icons": [
     {
-      "src": "icons8-game-controller-32.png",
-      "type": "image/png",
-      "sizes": "32x32"
+      "src": "favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
     },
     {
-      "src": "icons8-game-controller-96",
+      "src": "logo192.png",
       "type": "image/png",
-      "sizes": "96x96"
+      "sizes": "192x192"
     },
     {
       "src": "logo512.png",
