@@ -19,21 +19,6 @@ const gamePostSchema = new Schema(
             type: String,
             required: true
         },
-        rating: {
-            type: Number,
-            min: 0,
-            max: 5,
-        },
-        review: {
-            type: String,
-            minlength: 1,
-            maxlength: 280
-        },
-        platform: {
-            type: String,
-            minlength: 1,
-            maxlength: 20
-        },
         comments: [commentSchema]
     },
     {
