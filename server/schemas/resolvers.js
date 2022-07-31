@@ -22,7 +22,7 @@ const resolvers = {
   if (context.user) {
     const userData = await User.findOne({ _id: context.user._id })
       .select('-__v -password')
-      .populate('thoughts')
+      .populate('gameposts')
       .populate('friends');
 
     return userData;
@@ -83,7 +83,7 @@ const resolvers = {
       if (context.user) {
         const updatedGamePost = await GamePost.findOneAndUpdate(
           { _id: gamepostId },
-          { $push: { comments: { reactionBody, username: context.user.username } } },
+          { $push: { comments: { commentBody, username: context.user.username } } },
           { new: true, runValidators: true }
         );
     

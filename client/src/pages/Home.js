@@ -10,7 +10,6 @@ const Home = () => {
   // use useQuery hook to make query request
   const { loading, data } = useQuery(QUERY_GAMEPOSTS);
   const { data: userData } = useQuery(QUERY_ME_BASIC);
-  
   const gameposts = data?.gameposts || [];
 
   const loggedIn = Auth.loggedIn();
