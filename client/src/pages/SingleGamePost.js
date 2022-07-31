@@ -39,7 +39,7 @@ const SingleGamePost = props => {
       <CommentList comments={gamepost.comments} />
       )}
 
-      {Auth.loggedIn() && <CommentForm gamepostId={gamepost.id} />}
+      {Auth.loggedIn() && <CommentForm gamepostId={gamepost._id} />}
     </div>
   );
 };

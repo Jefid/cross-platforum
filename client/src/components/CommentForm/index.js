@@ -18,39 +18,39 @@ const CommentForm = ({ gamepostId }) => {
         event.preventDefault();
         try {
             await addComment({
-                variable: { commentBody, gamepostId },
+                variables: { commentBody, gamepostId },
             });
             // clear form value
-        setBody('');
-        setCharacterCount(0);
+            setBody('');
+            setCharacterCount(0);
         } catch (e) {
             console.error(e);
         }
     };
 
-  return (
-    <div>
-      <p className={`m-0 ${characterCount === 280 || error ? 'text-error' : ''}`}>
-        Character Count: 0/280
-      </p>
-      <form className="flex-row justify-center justify-space-between-md align-stretch"
-      onSubmit={handleFormSubmit}
-      >
-        <textarea
-          placeholder="What's your take on this game?"
-          value={commentBody}
-          className="form-input col-12 col-md-9"
-          onChange={handleChange}
-        ></textarea>
+    return (
+        <div>
+            <p className={`m-0 ${characterCount === 280 || error ? 'text-error' : ''}`}>
+                Character Count: 0/280
+            </p>
+            <form className="flex-row justify-center justify-space-between-md align-stretch"
+                onSubmit={handleFormSubmit}
+            >
+                <textarea
+                    placeholder="What's your take on this game?"
+                    value={commentBody}
+                    className="form-input col-12 col-md-9"
+                    onChange={handleChange}
+                ></textarea>
 
-        <button className="btn col-12 col-md-3" type="submit">
-          Submit
-        </button>
-      </form>
+                <button className="btn col-12 col-md-3" type="submit">
+                    Submit
+                </button>
+            </form>
 
-      {error && <div>Something went wrong...</div>}
-    </div>
-  );
+            {error && <div>Something went wrong...</div>}
+        </div>
+    );
 };
 
 export default CommentForm;
