@@ -9,5 +9,50 @@
                 "username" : "erika69"
             }
         ]
+    },
+    {
+        "gamePlayed" : "Quam elementum pulvinar etiam non",
+        "username" : "erika69",
+        "rating" : "3",
+        "comments" : [
+            {
+                "commentBody" : "Arcu vitae elementum curabitur vitae nunc sed",
+                "username" : "jefid"
+            }
+        ]
+    },
+    {
+        "gamePlayed" : "Risus viverra adipiscing at in tellus integer",
+        "username" : "jefid",
+        "rating" : "5",
+        "comments" : [
+            {
+                "commentBody" : "Amet purus gravida quis blandit. Eros donec. ",
+                "username" : "Molly48"
+            },
+            {
+                "commentBody" : "Viverra nibh cras pulvinar mattis nunc.",
+                "username" : "erika69"
+            }
+        ]
+    },
+    {
+        "gamePlayed" : "Libero volutpat sed cras ornare arcu",
+        "username" : "Molly48",
+        "rating" : "2",
+        "comments" : [
+            {
+                "commentBody" : "Erat velit scelerisque in dictum. Turpis egestas ",
+                "username" : "jefid"
+            },
+            {
+                "commentBody" : "Cras sed felis eget velit aliquet sagittis id",
+                "username" : "erika69"
+            },
+            {
+                "commentBody" : "Egestas sed sed risus pretium quam vulputate dignissim suspendiss",
+                "username" : "jefid"
+            }
+        ]
     }
 ]

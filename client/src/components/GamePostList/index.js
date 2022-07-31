@@ -1,8 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const GamePostList = ({ gameposts, title }) => {
   if (!gameposts.length) {
-    return <h3>No Thoughts Yet</h3>;
+    return <h3>No Completed Games Yet</h3>;
   }
 
   return (
@@ -12,15 +13,23 @@ const GamePostList = ({ gameposts, title }) => {
         gameposts.map(gamepost => (
           <div key={gamepost._id} className="card mb-3">
             <p className="card-header">
-              {gamepost.username} <t/>
-                completed at: {gamepost.createdAt}
+              <Link
+              to={`/profile/${gamepost.username}`}
+              style={{ fontWeight: 700 }}
+              className="text-light"
+              >
+                {gamepost.username}
+              </Link>{' '}
+                played on {gamepost.createdAt}
             </p>
             <div className="card-body">
-              <p>{gamepost.gamePlayed}</p>
-              <p className="mb-0">
-                Comments: {gamepost.commentCount} || Click to{' '}
-                {gamepost.commentCount ? 'see' : 'start'} the discussion!
-              </p>
+              <Link to={`/gamepost/${gamepost._id}`}>
+                <p>{gamepost.gamePlayed}</p>
+                <p className="mb-0">
+                  Comments: {gamepost.commentCount} || Click to{' '}
+                  {gamepost.commentCount ? 'see' : 'start'} the discussion!
+                </p>
+              </Link>
             </div>
           </div>
         ))}

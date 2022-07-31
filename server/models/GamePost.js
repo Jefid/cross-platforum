@@ -1,5 +1,5 @@
 const { Schema, model } = require('mongoose');
- const commentSchema = require('./Comment');
+const commentSchema = require('./Comment');
 const dateFormat = require('../utils/dateFormat');
 
 const gamePostSchema = new Schema(
@@ -18,22 +18,6 @@ const gamePostSchema = new Schema(
         username: {
             type: String,
             required: true
-        },
-        rating: {
-            type: Number,
-            required: "You played it, you rate it",
-            min: 0,
-            max: 5,
-        },
-        review: {
-            type: String,
-            minlength: 1,
-            maxlength: 280
-        },
-        platform: {
-            type: String,
-            minlength: 1,
-            maxlength: 20
         },
         comments: [commentSchema]
     },
