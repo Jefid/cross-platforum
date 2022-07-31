@@ -2,16 +2,15 @@ const { User, GamePost } = require('../models');
 const { AuthenticationError } = require('apollo-server-express');
 const { signToken } = require('../utils/auth');
 
+// resolvers 
 const resolvers = {
   Query: {
-
     users: async () => {
       return User.find()
         .select('-__v -password')
         .populate('gameposts')
         .populate('friends');
     },
-
     user: async (parent, { username }) => {
       return User.findOne({ username })
         .select('-__v -password')
@@ -23,7 +22,7 @@ const resolvers = {
   if (context.user) {
     const userData = await User.findOne({ _id: context.user._id })
       .select('-__v -password')
-      .populate('thoughts')
+      .populate('gameposts')
       .populate('friends');
 
     return userData;
@@ -36,7 +35,6 @@ const resolvers = {
       const params = username ? { username } : {};
       return GamePost.find(params).sort({ createdAt: -1 });
     },
-
     gamepost: async (parent, { _id }) => {
       return GamePost.findOne({ _id });
     }
@@ -85,7 +83,7 @@ const resolvers = {
       if (context.user) {
         const updatedGamePost = await GamePost.findOneAndUpdate(
           { _id: gamepostId },
-          { $push: { comments: { reactionBody, username: context.user.username } } },
+          { $push: { comments: { commentBody, username: context.user.username } } },
           { new: true, runValidators: true }
         );
     
