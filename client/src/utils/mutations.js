@@ -37,3 +37,33 @@ export const ADD_FRIEND = gql`
     }
   }
 `;
+
+export const ADD_GAMEPOST = gql`
+  mutation addGamePost($gamePlayed: String!) {
+    addGamePost(gamePlayed: $gamePlayed) {
+      _id
+      gamePlayed
+      createdAt
+      username
+      commentCount
+      comments {
+        _id
+      }
+    }
+  }
+`;
+
+export const ADD_COMMENT = gql`
+  mutation addComment($gamepostId: ID!, $commentBody: String!)  {
+    addComment(gamepostId: $gamepostId, commentBody: $commentBody) {
+      _id
+      commentCount
+      comments {
+        _id
+        commentBody
+        createdAt
+        username
+      }
+    }
+  }
+`;

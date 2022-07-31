@@ -2,7 +2,9 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 import { QUERY_GAMEPOST } from '../utils/queries';
+import Auth from '../utils/auth';
 import CommentList from '../components/CommentList';
+import CommentForm from '../components/CommentForm';
 
 
 const SingleGamePost = props => {
@@ -37,6 +39,7 @@ const SingleGamePost = props => {
       <CommentList comments={gamepost.comments} />
       )}
 
+      {Auth.loggedIn() && <CommentForm gamepostId={gamepost.id} />}
     </div>
   );
 };
