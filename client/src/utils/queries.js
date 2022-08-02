@@ -7,6 +7,8 @@ export const QUERY_GAMEPOSTS = gql`
       gamePlayed
       createdAt
       username
+      rating
+      review
       commentCount
       comments {
         _id
@@ -25,6 +27,8 @@ export const QUERY_GAMEPOST = gql`
       gamePlayed
       createdAt
       username
+      rating
+      review
       commentCount
       comments {
         _id
@@ -52,6 +56,8 @@ export const QUERY_USER = gql`
         gamePlayed
         createdAt
         commentCount
+        rating
+        review
       }
     }
   }
@@ -67,6 +73,8 @@ export const QUERY_ME = gql`
       gameposts {
         _id
         gamePlayed
+        rating
+        review
         createdAt
         commentCount
         comments {
