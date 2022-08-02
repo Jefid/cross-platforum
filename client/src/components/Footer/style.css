@@ -1,0 +1,15 @@
+footer{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+#contributers{
+    text-align: center;
+}
+
+footer div a:hover {
+color: darkgreen;
+font-weight: bolder;
+}
+

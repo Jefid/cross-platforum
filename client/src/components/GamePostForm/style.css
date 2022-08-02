@@ -5,3 +5,30 @@
     background-color: black;
     border-radius: 10px;
 }
+
+#game-name-text{
+background-color: black;
+color: #00c70d;
+}
+
+#game-review-text{
+    background-color: black;
+    color: #00c70d;
+}
+
+#review-count{
+    background-color: black;
+    color: #00c70d;
+    align-self: flex-end;
+}
+#game-count{
+    background-color: black;
+    color: #00c70d;
+    align-self: flex-end;
+}
+
+#submit-button{
+    max-width: 40%;
+    min-width: 30%;
+    align-self: center;
+}

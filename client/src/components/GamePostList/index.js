@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import './style.css';
 
 const GamePostList = ({ gameposts, title }) => {
   if (!gameposts.length) {
@@ -7,7 +8,7 @@ const GamePostList = ({ gameposts, title }) => {
   }
 
   return (
-    <div>
+    <div id= "game-list-display">
       <h3>{title}</h3>
       {gameposts &&
         gameposts.map(gamepost => (
