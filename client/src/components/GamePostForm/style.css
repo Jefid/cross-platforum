@@ -1,0 +1,7 @@
+#entry-form{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color: black;
+    border-radius: 10px;
+}

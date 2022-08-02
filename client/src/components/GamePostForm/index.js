@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
 import { ADD_GAMEPOST } from '../../utils/mutations';
 import { QUERY_GAMEPOSTS, QUERY_ME } from '../../utils/queries';
+import './style.css';
 
 const GamePostForm = () => {
 
@@ -67,12 +68,12 @@ const GamePostForm = () => {
   };
   return (
     <div>
-      <p className={`m-0 ${characterCount === 50 ? 'text-error' : ''}`}>
+      <form className="flex-row justify-center justify-space-between-md align-stretch" id="entry-form"
+        onSubmit={handleFormSubmit}>
+                <p className={`m-0 ${characterCount === 50 ? 'text-error' : ''}`}>
         Character Count: {characterCount}/50
         {error && <span className="ml-2">Something went wrong...</span>}
       </p>
-      <form className="flex-row justify-center justify-space-between-md align-stretch"
-        onSubmit={handleFormSubmit}>
         <textarea
           name='gamePlayed'
           placeholder="Tell us about a new game you played..."
