@@ -20,6 +20,13 @@ const userSchema = new Schema(
       required: true,
       minlength: 5
     },
+    bio: {
+      type: String,
+      maxlength: 280
+    },
+    platform: {
+      type: String
+    },
     gameposts: [
       {
         type: Schema.Types.ObjectId,
