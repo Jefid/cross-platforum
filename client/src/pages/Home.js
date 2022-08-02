@@ -18,7 +18,7 @@ const Home = () => {
     <main>
       <div className="flex-row justify-space-between">
         {loggedIn && (
-          <div className="col-12 mb-3">
+          <div className="col-12 mb-3" >
           <GamePostForm />
         </div>
         )}
@@ -33,7 +33,7 @@ const Home = () => {
           )}
         </div>
         {loggedIn && userData ? (
-          <div className="col-12 col-lg-3 mb-3">
+          <div className="col-12 col-lg-3 mb-3" id="friends-list">
             <FriendList
               username={userData.me.username}
               friendCount={userData.me.friendCount}

@@ -51,9 +51,9 @@ const Profile = (props) => {
   };
 
   return (
-    <div>
+    <div id="user-page">
       <div className="flex-row mb-3">
-        <h2 className="bg-dark text-secondary p-3 display-inline-block">
+        <h2 className="bg-dark text-secondary p-3 display-inline-block" id="viewing-profile">
           Viewing {userParam ? `${user.username}'s` : 'your'} profile.
         </h2>
         {userParam && (

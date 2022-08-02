@@ -1,13 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import './style.css';
 
 const FriendList = ({ friendCount, username, friends }) => {
   if (!friends || !friends.length) {
-    return <p className="bg-dark text-light p-3">{username}, make some nerd friends!</p>;
+    return <p id="no-friends" className="bg-dark text-light p-3">{username}, make some nerd friends!</p>;
   }
 
   return (
-    <div>
+    <div id="yes-friends">
       <h5>
         {username}'s {friendCount} {friendCount === 1 ? 'friend' : 'friends'}
       </h5>

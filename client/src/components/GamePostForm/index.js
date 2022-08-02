@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
 import { ADD_GAMEPOST } from '../../utils/mutations';
 import { QUERY_GAMEPOSTS, QUERY_ME } from '../../utils/queries';
+import './style.css';
 
 const GamePostForm = () => {
 
@@ -67,31 +68,33 @@ const GamePostForm = () => {
   };
   return (
     <div>
-      <p className={`m-0 ${characterCount === 50 ? 'text-error' : ''}`}>
+      <form className="flex-row justify-center justify-space-between-md align-stretch" id="entry-form"
+        onSubmit={handleFormSubmit}>
+                <p id="game-count" className={`m-0 ${characterCount === 50 ? 'text-error' : ''}`}>
         Character Count: {characterCount}/50
         {error && <span className="ml-2">Something went wrong...</span>}
       </p>
-      <form className="flex-row justify-center justify-space-between-md align-stretch"
-        onSubmit={handleFormSubmit}>
         <textarea
+        id="game-name-text"
           name='gamePlayed'
           placeholder="Tell us about a new game you played..."
           value={gamePlayed}
           className="form-input col-12 col-md-9"
           onChange={handleChange}
         ></textarea>
-        <p className={`m-0 ${reviewCharacterCount === 280 ? 'text-error' : ''}`}>
+        <p id="review-count" className={`m-0 ${reviewCharacterCount === 280 ? 'text-error' : ''}`}>
           Character Count: {reviewCharacterCount}/280
           {error && <span className="ml-2">Something went wrong...</span>}
         </p>
         <textarea
+        id="game-review-text"
           name='review'
           placeholder='What did you think of this game?'
           value={review}
           className="form-input col-12 col-md-9"
           onChange={handleReviewChange}
         ></textarea>
-        <button className="btn col-12 col-md-3" type="submit">
+        <button className="btn col-12 col-md-3" type="submit" id="submit-button">
           Submit
         </button>
       </form>
