@@ -19,11 +19,11 @@ const Header = () => {
           <img src={headericon} alt="game controllers" width="430px"></img>
         </Link>
 
-        <nav className="text-center">
+        <nav className="text-center" id="navbar">
         
           {Auth.loggedIn() ? (
             <>
-              <Link to="/profile">Me</Link>
+              <Link to="/profile">Your Games</Link>
               <a href='/' onClick={logout}>
                 Logout
               </a>
