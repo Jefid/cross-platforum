@@ -1,6 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Auth from '../../utils/auth';
+import headerlogo from './image.png'
+import headericon from './cross-logo.png'
+import './style.css';
 
 const Header = () => {
 
@@ -11,12 +14,13 @@ const Header = () => {
 
   return (
     <header className="bg-secondary mb-4 py-2 flex-row align-center">
-      <div className="container flex-row justify-space-between-lg justify-center align-center">
+      <div className="container flex-row justify-space-between-lg justify-center align-center" >
         <Link to="/">
-          <h1>Cross Platforum</h1>
+          <img src={headericon} alt="game controllers" width="430px"></img>
         </Link>
 
         <nav className="text-center">
+        
           {Auth.loggedIn() ? (
             <>
               <Link to="/profile">Me</Link>
@@ -31,6 +35,7 @@ const Header = () => {
             </>
           )}
         </nav>
+        <img src={headerlogo} alt="game controllers" width="430px"></img>
       </div>
     </header>
   );

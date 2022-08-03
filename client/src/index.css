@@ -2,7 +2,7 @@
   --primary: #873434;
   --secondary: #000000;
   --tertiary: #ffffff;
-  --quatrinary: #1c1e1de1;
+  --quatrinary: #262926;
   --light: #000000;
   --dark: #00c70d;
   --error: rgb(228, 46, 1);
@@ -31,7 +31,7 @@ body {
   line-height: 1.5;
   font-size: 20px;
   color: var(--dark);
-  background-color: #1c1e1de1;
+  background-color:var(--quatrinary);
 }
 
 h1,
@@ -48,7 +48,7 @@ h6 {
 
 h1 {
   font-size: 2.25rem;
-  background-color: var(--quatrinary);
+  background-color: var(--secondary);
   padding: 15px;
   border-radius: 20px;
 }
