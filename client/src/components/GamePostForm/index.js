@@ -24,7 +24,7 @@ const GamePostForm = () => {
       } catch (e) {
         console.warn("First thought insertion by user");
       }
-
+      
       // update gamepost array's cache
       const { gameposts } = cache.readQuery({ query: QUERY_GAMEPOSTS });
       cache.writeQuery({
@@ -66,11 +66,11 @@ const GamePostForm = () => {
       setReviewCharacterCount(event.target.value.length);
     }
   };
-
-  function StarRating({ onChange }) {
+ 
     const changeRating = (newRating) => {
       setRating(newRating);
-      onChange?.(newRating);
+      console.log(rating);
+      // onChange?.(newRating);
     };
 
     return (
@@ -131,7 +131,6 @@ const GamePostForm = () => {
         </form>
       </div>
     );
-  }
 };
 
 export default GamePostForm;

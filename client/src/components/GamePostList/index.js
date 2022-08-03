@@ -26,6 +26,7 @@ const GamePostList = ({ gameposts, title }) => {
             <div className="card-body">
               <Link to={`/gamepost/${gamepost._id}`}>
                 <p>{gamepost.gamePlayed}</p>
+                <p>{gamepost.rating}</p>
                 <p className="mb-0">
                   Comments: {gamepost.commentCount} || Click to{' '}
                   {gamepost.commentCount ? 'see' : 'start'} the discussion!
