@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Star from '../Star';
 import './style.css';
 
 const GamePostList = ({ gameposts, title }) => {
@@ -26,7 +27,13 @@ const GamePostList = ({ gameposts, title }) => {
             <div className="card-body">
               <Link to={`/gamepost/${gamepost._id}`}>
                 <p>{gamepost.gamePlayed}</p>
-                <p>{gamepost.rating}</p>
+                <p>    <span>
+            {[1,2,3,4,5].map((value) => (
+            <Star
+            key={gamepost.rating}
+            filled={value <=gamepost.rating}
+            />))}
+            </span></p>
                 <p className="mb-0">
                   Comments: {gamepost.commentCount} || Click to{' '}
                   {gamepost.commentCount ? 'see' : 'start'} the discussion!
