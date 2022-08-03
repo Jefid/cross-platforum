@@ -35,8 +35,8 @@ const GamePostList = ({ gameposts, title }) => {
             />))}
             </span></p>
                 <p className="mb-0">
-                  Comments: {gamepost.commentCount} || Click to{' '}
-                  {gamepost.commentCount ? 'see' : 'start'} the discussion!
+                  Comments: {gamepost.commentCount} -- Click to{' '}
+                  {gamepost.commentCount ? 'see' : 'start'} comments!
                 </p>
               </Link>
             </div>
