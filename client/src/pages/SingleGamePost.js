@@ -5,6 +5,7 @@ import { QUERY_GAMEPOST } from '../utils/queries';
 import Auth from '../utils/auth';
 import CommentList from '../components/CommentList';
 import CommentForm from '../components/CommentForm';
+import Star from '../components/Star';
 
 
 const SingleGamePost = props => {
@@ -37,7 +38,13 @@ const SingleGamePost = props => {
           <p>{gamepost.review}</p>
         </div>
         <div className="card-body">
-          <p>{gamepost.rating}</p>
+        <span>
+            {[1,2,3,4,5].map((value) => (
+            <Star
+            key={gamepost.rating}
+            filled={value <=gamepost.rating}
+            />))}
+            </span>
         </div>
       </div>
 
