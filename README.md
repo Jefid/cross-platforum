@@ -76,6 +76,9 @@ Your app is ready to be deployed!
 * [Mongoose](https://mongoosejs.com/)
 * [concurrently](https://www.npmjs.com/package/concurrently)
 
+### Check Out The Deployed App Here:
+[Cross-Platforum](https://infinite-mesa-70815.herokuapp.com/)
+
 
 ## Feedback
 [Check out my old repo to see my past commits!](https://github.com/Jefid/cross-platforum) This includes our team of contributors.
