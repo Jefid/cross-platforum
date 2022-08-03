@@ -36,6 +36,9 @@ const SingleGamePost = props => {
         <div className="card-body">
           <p>{gamepost.review}</p>
         </div>
+        <div className="card-body">
+          <p>{gamepost.rating}</p>
+        </div>
       </div>
 
       {gamepost.commentCount > 0 && (
