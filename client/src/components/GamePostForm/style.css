@@ -32,3 +32,11 @@ color: #00c70d;
     min-width: 30%;
     align-self: center;
 }
+
+#rating-num{
+    align-self: center;
+}
+#rating-field{
+    align-self: center;
+    padding-bottom: 5px;
+}

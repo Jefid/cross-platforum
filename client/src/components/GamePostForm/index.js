@@ -95,15 +95,6 @@ const GamePostForm = () => {
             className="form-input col-12 col-md-9"
             onChange={handleChange}
           ></textarea>
-          <span>
-            {[1, 2, 3, 4, 5].map((value) => (
-              <Star
-                key={value}
-                filled={value <= rating}
-                onClick={() => changeRating(value)}
-              />
-            ))}
-          </span>
           <p
             id="review-count"
             className={`m-0 ${
@@ -121,6 +112,16 @@ const GamePostForm = () => {
             className="form-input col-12 col-md-9"
             onChange={handleReviewChange}
           ></textarea>
+                <span id="rating-field">Rating:</span>
+                    <span id ="rating-num">
+            {[1, 2, 3, 4, 5].map((value) => (
+              <Star
+                key={value}
+                filled={value <= rating}
+                onClick={() => changeRating(value)}
+              />
+            ))}
+          </span>
           <button
             className="btn col-12 col-md-3"
             type="submit"
