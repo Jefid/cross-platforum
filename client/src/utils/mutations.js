@@ -39,8 +39,8 @@ export const ADD_FRIEND = gql`
 `;
 
 export const ADD_GAMEPOST = gql`
-  mutation addGamePost($gamePlayed: String!, $review: String) {
-    addGamePost(gamePlayed: $gamePlayed, review: $review) {
+  mutation addGamePost($gamePlayed: String!, $review: String, $rating: Int) {
+    addGamePost(gamePlayed: $gamePlayed, review: $review, rating: $rating) {
       _id
       gamePlayed
       createdAt
