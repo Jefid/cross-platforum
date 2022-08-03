@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
 import { ADD_COMMENT } from '../../utils/mutations';
+import './style.css';
 
 const CommentForm = ({ gamepostId }) => {
     const [commentBody, setBody] = useState('');
@@ -37,6 +38,7 @@ const CommentForm = ({ gamepostId }) => {
                 onSubmit={handleFormSubmit}
             >
                 <textarea
+                    id="comment-text"
                     placeholder="What's your take on this game?"
                     value={commentBody}
                     className="form-input col-12 col-md-9"
