@@ -4,6 +4,8 @@
 
 A forum dedicated to video game enthusiasts. Allows users to post games played, including their review and rating of the game. Users can also comment on other user posts, and add friends to their network.
 
+<img src = "client\build\mock-up.gif">
+
 ## Description
 
 Game On! If you obsess over video games and can't stop talking about them, come join the Cross Platforum where you can discuss games you've played, write reviews and rate them. Interact with like-minded individuals by commenting on their game posts. Keep track of these new friends with an 'Add Friend' feature.  
@@ -48,6 +50,10 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
+### `npm seed`
+
+Seeds the database with dummy data from "/seeders/seeds.js".
+
 ### `npm test`
 
 Launches the test runner in the interactive watch mode.\
@@ -81,10 +87,9 @@ Your app is ready to be deployed!
 
 
 ## Feedback
-[Check out my old repo to see my past commits!](https://github.com/Jefid/cross-platforum) This includes our team of contributors.
 
 Have something you'd like to add?<br>
-Feel free to contact me via email!<br>
+Feel free to contact us via email!<br>
 
 <a href="mailto:jquandt411@gmail.com">
   <img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" />

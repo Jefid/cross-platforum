@@ -20,13 +20,13 @@ const GamePostList = ({ gameposts, title }) => {
               style={{ fontWeight: 700 }}
               className="text-light"
               >
-                {gamepost.username}
+                👤 {gamepost.username}
               </Link>{' '}
                 played on {gamepost.createdAt}
             </p>
             <div className="card-body">
               <Link to={`/gamepost/${gamepost._id}`}>
-                <p>{gamepost.gamePlayed}</p>
+                <p id="game-title">{gamepost.gamePlayed}</p>
                 <p>    <span>
             {[1,2,3,4,5].map((value) => (
             <Star

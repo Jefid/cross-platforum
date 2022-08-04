@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Auth from '../../utils/auth';
 import headerlogo from './image.png'
 import headericon from './cross-logo.png'
+
 import './style.css';
 
 const Header = () => {
@@ -16,7 +17,7 @@ const Header = () => {
     <header className="bg-secondary mb-4 py-2 flex-row align-center">
       <div className="container flex-row justify-space-between-lg justify-center align-center" >
         <Link to="/">
-          <img src={headericon} alt="game controllers" width="430px"></img>
+          <img id="main-logo" src={headericon} alt="logo saying cross-platforum" width="420px"></img>
         </Link>
 
         <nav className="text-center" id="navbar">
@@ -35,7 +36,7 @@ const Header = () => {
             </>
           )}
         </nav>
-        <img src={headerlogo} alt="game controllers" width="430px"></img>
+        <img id ="main-name"  src={headerlogo} alt="game controllers" width="430px"></img>
       </div>
     </header>
   );

@@ -90,7 +90,7 @@ const GamePostForm = () => {
           <textarea
             id="game-name-text"
             name="gamePlayed"
-            placeholder="Tell us about a new game you played..."
+            placeholder="Type your game played and console played on here..."
             value={gamePlayed}
             className="form-input col-12 col-md-9"
             onChange={handleChange}

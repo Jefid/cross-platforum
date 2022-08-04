@@ -27,7 +27,7 @@ const SingleGamePost = props => {
       <div className="card mb-3">
         <p className="card-header">
           <span style={{ fontWeight: 700 }} className="text-light">
-           {gamepost.username}
+          👤 {gamepost.username}
           </span>{' '}
           Posted on {gamepost.createdAt}
         </p>
