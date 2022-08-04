@@ -26,7 +26,7 @@ const GamePostList = ({ gameposts, title }) => {
             </p>
             <div className="card-body">
               <Link to={`/gamepost/${gamepost._id}`}>
-                <p>{gamepost.gamePlayed}</p>
+                <p id="game-title">{gamepost.gamePlayed}</p>
                 <p>    <span>
             {[1,2,3,4,5].map((value) => (
             <Star
