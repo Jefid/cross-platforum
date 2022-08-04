@@ -20,7 +20,7 @@ const GamePostList = ({ gameposts, title }) => {
               style={{ fontWeight: 700 }}
               className="text-light"
               >
-                {gamepost.username}
+                👤 {gamepost.username}
               </Link>{' '}
                 played on {gamepost.createdAt}
             </p>

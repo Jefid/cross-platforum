@@ -3,5 +3,10 @@ border-radius: 10px;
 max-height: 100px;
 }
 #yes-friends{
+display: flex;
+flex-direction: column;
+}
 
+div h5{
+    align-self: center;
 }

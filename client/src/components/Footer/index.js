@@ -1,5 +1,6 @@
 import React from 'react';
 import './style.css';
+import footerlogo from './image.png'
 
 const Footer = () => {
   return (
@@ -11,7 +12,12 @@ const Footer = () => {
       <a href='https://github.com/ppepin34'rel="noreferrer" target="_blank"> Phil, </a>
        and 
       <a href='https://github.com/rvacovsky'rel="noreferrer" target="_blank"> Roger </a>
-      <br></br> &copy;2022</div>
+      <br></br> 
+      <img id ="main-name"  src={footerlogo} alt="game controllers" width="430px"></img>
+      <br></br> 
+      &copy;2022
+      </div>
+      
     </footer>
   );
 };
