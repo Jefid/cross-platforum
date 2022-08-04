@@ -1,57 +1,114 @@
 [
     {
-        "gamePlayed" : "molestiae dicta voluptas ut iusto et hic nam",
+        "gamePlayed" : "Super Mario Bros (NES)",
         "username" : "jefid",
+        "review":"Love me some good old NES games. I don't remember it being this difficult.",
         "rating" : "4",
         "comments" : [
             {
-                "commentBody" : "non exercitationem consequatur temporibus quia dicta id earum molestias voluptatibus et ut quia officiis dignissimos ex maxime sit voluptatem",
+                "commentBody" : "For an old game it still really hold up!",
                 "username" : "erika69"
             }
         ]
     },
     {
-        "gamePlayed" : "Quam elementum pulvinar etiam non",
+        "gamePlayed" : "Grand Theft Auto V (PS4)",
         "username" : "erika69",
+        "review":"Definitely pay to win game at this point...",
         "rating" : "3",
         "comments" : [
             {
-                "commentBody" : "Arcu vitae elementum curabitur vitae nunc sed",
+                "commentBody" : "please just drop GTA 6 already",
                 "username" : "jefid"
+                
             }
         ]
     },
     {
-        "gamePlayed" : "Risus viverra adipiscing at in tellus integer",
+        "gamePlayed" : "Legend of Zelda: Minish Cap (GBA)",
         "username" : "jefid",
+        "review":"The soundtrack and art style are just so good",
         "rating" : "5",
         "comments" : [
             {
-                "commentBody" : "Amet purus gravida quis blandit. Eros donec. ",
+                "commentBody" : "Miss GBA games",
                 "username" : "Molly48"
             },
             {
-                "commentBody" : "Viverra nibh cras pulvinar mattis nunc.",
+                "commentBody" : "Wish they'd release a remastered",
                 "username" : "erika69"
             }
         ]
     },
     {
-        "gamePlayed" : "Libero volutpat sed cras ornare arcu",
+        "gamePlayed" : "CSGO (PC)",
         "username" : "Molly48",
+        "review":"Buncha sweaty nerds that have been playing since release. I hate it.",
         "rating" : "2",
         "comments" : [
             {
-                "commentBody" : "Erat velit scelerisque in dictum. Turpis egestas ",
+                "commentBody" : "1V1 me bruh",
                 "username" : "jefid"
             },
             {
-                "commentBody" : "Cras sed felis eget velit aliquet sagittis id",
+                "commentBody" : "You probably don't have the  knife skins I got",
                 "username" : "erika69"
             },
             {
-                "commentBody" : "Egestas sed sed risus pretium quam vulputate dignissim suspendiss",
+                "commentBody" : "I take it back, don't 1V1 me",
                 "username" : "jefid"
+            }
+        ]
+    },
+    {
+        "gamePlayed" : "Spiderman (PC)",
+        "username" : "erika69",
+        "review":"The old spiderman games were the best. Voice actors geek me out.",
+        "rating" : "4",
+        "comments" : [
+            {
+                "commentBody" : "miss this game, haven't found my torrent of it :(",
+                "username" : "jefid"
+                
+            }
+        ]
+    },
+    {
+        "gamePlayed" : "CSGO (PC)",
+        "username" : "Molly48",
+        "review":"Buncha sweaty nerds that have been playing since release. I hate it.",
+        "rating" : "2",
+        "comments" : [
+            {
+                "commentBody" : "1V1 me bruh",
+                "username" : "jefid"
+            },
+            {
+                "commentBody" : "You probably don't have the  knife skins I got",
+                "username" : "erika69"
+            },
+            {
+                "commentBody" : "I take it back, don't 1V1 me",
+                "username" : "jefid"
+            }
+        ]
+    },    {
+        "gamePlayed" : "Fire Emblerm (DS)",
+        "username" : "Molly48",
+        "review":"Classic DS game, love the RTS elements",
+        "rating" : "5",
+        "comments" : [
+            {
+                "commentBody" : "put so many hours into this back in the day ugh",
+                "username" : "jefid"
+            },
+            {
+                "commentBody" : "I never gave this game a shot, but I should",
+                "username" : "erika69"
+            },
+            {
+                "commentBody" : "Yeah you definitely should @erika69",
+                "username" : "Molly48"
             }
         ]
     }
