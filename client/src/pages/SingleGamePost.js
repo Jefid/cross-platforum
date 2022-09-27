@@ -10,7 +10,7 @@ import Star from '../components/Star';
 
 const SingleGamePost = props => {
   const { id: gamepostId } = useParams();
-  
+
   const { loading, data } = useQuery(QUERY_GAMEPOST, {
     variables: { id: gamepostId }
   });
@@ -27,7 +27,7 @@ const SingleGamePost = props => {
       <div className="card mb-3">
         <p className="card-header">
           <span style={{ fontWeight: 700 }} className="text-light">
-          👤 {gamepost.username}
+            👤 {gamepost.username}
           </span>{' '}
           Posted on {gamepost.createdAt}
         </p>
@@ -38,18 +38,25 @@ const SingleGamePost = props => {
           <p>{gamepost.review}</p>
         </div>
         <div className="card-body">
-        <span>
-            {[1,2,3,4,5].map((value) => (
-            <Star
-            key={gamepost.rating}
-            filled={value <=gamepost.rating}
-            />))}
-            </span>
+          <span>
+            {[1, 2, 3, 4, 5].map((value) => (
+              <Star
+                key={gamepost.rating}
+                filled={value <= gamepost.rating}
+              />))}
+          </span>
+          {Auth.loggedIn() && Auth.getProfile().data.username === gamepost.username ? (
+            <>
+          <button>Update</button>
+          <button>Delete</button>
+          </>
+          ): null
+}
         </div>
       </div>
 
       {gamepost.commentCount > 0 && (
-      <CommentList comments={gamepost.comments} />
+        <CommentList comments={gamepost.comments} />
       )}
 
       {Auth.loggedIn() && <CommentForm gamepostId={gamepost._id} />}
