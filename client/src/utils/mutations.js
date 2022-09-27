@@ -55,6 +55,40 @@ export const ADD_GAMEPOST = gql`
   }
 `;
 
+export const UPDATE_GAMEPOST = gql`
+  mutation updateGamePost($gamePlayed: String!, $review: String, $rating: Int) {
+    updateGamePost(gamePlayed: $gamePlayed, review: $review, rating: $rating) {
+      _id
+      gamePlayed
+      createdAt
+      username
+      rating
+      review
+      commentCount
+      comments {
+        _id
+      }
+    }
+  }
+`;
+
+export const DELETE_GAMEPOST = gql`
+  mutation deleteGamePost($gamePlayed: String!, $review: String, $rating: Int) {
+    deleteGamePost(gamePlayed: $gamePlayed, review: $review, rating: $rating) {
+      _id
+      gamePlayed
+      createdAt
+      username
+      rating
+      review
+      commentCount
+      comments {
+        _id
+      }
+    }
+  }
+`;
+
 export const ADD_COMMENT = gql`
   mutation addComment($gamepostId: ID!, $commentBody: String!)  {
     addComment(gamepostId: $gamepostId, commentBody: $commentBody) {

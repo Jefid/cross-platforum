@@ -78,6 +78,25 @@ const resolvers = {
 
       throw new AuthenticationError('You need to be logged in!');
     },
+    updateGamePost: async (parent, { gamepostId }, context) => {
+      if (context.user) {
+        const updatedGamePost = await GamePost.findOneAndUpdate(
+          { _id: gamepostId },
+          body,
+          { new: true }
+        );
+        
+        return updatedGamePost
+      }
+    },
+
+    deleteGamePost: async (parent, { gamepostId }, context ) => {
+      if (context.user) {
+        GamePost.findByIdAndDelete(
+          {_id: gamepostId }
+        )
+      }
+    },
 
     addComment: async (parent, { gamepostId, commentBody }, context) => {
       if (context.user) {
